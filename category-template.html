@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- DYNAMIC: JS will update title/meta -->
+  <title>Category — Zornavik</title>
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<!--
+  IMPORTANT: Set data-category to the category_slug from blog-data.json
+  Example for "best" category: <body class="page-category" data-category="best">
+  Example for "reviews":       <body class="page-category" data-category="reviews">
+-->
+<body class="page-category" data-category="best">
+
+  <!-- ── HEADER ── -->
+  <header id="site-header">
+    <div class="container header-inner">
+      <a href="/" class="site-logo">
+        <div class="logo-icon">Z</div>
+        <span class="logo-text">zornavik<span>.me</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="/">Home</a>
+  </nav>
+
+  <main>
+    <!-- Category Hero -->
+    <section class="category-hero">
+      <div class="container">
+        <h1 id="category-title">Category</h1>
+        <p><span id="category-count">0 articles</span> in this category</p>
+      </div>
+    </section>
+
+    <!-- Posts -->
+    <section class="posts-section">
+      <div class="container">
+        <div class="loading-state" id="loading-indicator">
+          <div class="spinner"></div>
+        </div>
+        <div id="posts-container"></div>
+        <nav id="pagination" aria-label="Page navigation"></nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">zornavik<span>.me</span></span>
+          <p>Honest, experience-backed vacuum cleaner reviews to help you shop smarter.</p>
+          <div class="social-icons">
+            <a href="https://facebook.com/zornavik.me" aria-label="Facebook" rel="noopener">f</a>
+            <a href="https://instagram.com/zornavik.me" aria-label="Instagram" rel="noopener">in</a>
+            <a href="https://youtube.com/@zornavikme" aria-label="YouTube" rel="noopener">▶</a>
+            <a href="https://twitter.com/zornavikme" aria-label="Twitter" rel="noopener">𝕏</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/author/">About / Author</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
+            <li><a href="/terms/">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year"></span> zornavik.me</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+    const observer = new MutationObserver(() => {
+      const ind = document.getElementById("loading-indicator");
+      if (ind) ind.style.display = "none";
+    });
+    const pc = document.getElementById("posts-container");
+    if (pc) observer.observe(pc, { childList: true });
+  </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zornavik — Honest Vacuum Cleaner Reviews</title>
+  <meta name="description" content="Expert vacuum cleaner reviews, buying guides, and comparisons by Liam Adrian Foster. Find the best vacuum for your home without the confusion.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://zornavik.me/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Zornavik — Honest Vacuum Cleaner Reviews">
+  <meta property="og:description" content="Expert vacuum cleaner reviews and buying guides.">
+  <meta property="og:url" content="https://zornavik.me/">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (replace with your actual favicon) -->
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page-home">
+
+  <!-- ── HEADER ── -->
+  <header id="site-header">
+    <div class="container header-inner">
+      <a href="/" class="site-logo">
+        <div class="logo-icon">Z</div>
+        <span class="logo-text">zornavik<span>.me</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <!-- Dynamic category links injected here by JS -->
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="/">Home</a>
+    <!-- Dynamic category links injected here by JS -->
+  </nav>
+
+  <main>
+    <!-- ── HERO ── -->
+    <section class="home-hero">
+      <div class="container">
+        <h1>Honest Vacuum Cleaner Reviews<br>You Can Trust</h1>
+        <p>12 years of industry experience. Real-world testing. Simple, clear guidance to help you find the right vacuum without wasted money.</p>
+      </div>
+    </section>
+
+    <!-- ── POSTS GRID ── -->
+    <section class="posts-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Latest <span>Articles</span></h2>
+        </div>
+
+        <!-- Loading state -->
+        <div class="loading-state" id="loading-indicator">
+          <div class="spinner"></div>
+        </div>
+
+        <!-- Posts will be injected here -->
+        <div id="posts-container"></div>
+
+        <!-- Pagination will be injected here -->
+        <nav id="pagination" aria-label="Page navigation"></nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">zornavik<span>.me</span></span>
+          <p>Honest, experience-backed vacuum cleaner reviews to help you shop smarter. No fluff, no fake claims — just clear, practical advice.</p>
+          <div class="social-icons">
+            <a href="https://facebook.com/zornavik.me" aria-label="Facebook" rel="noopener">f</a>
+            <a href="https://instagram.com/zornavik.me" aria-label="Instagram" rel="noopener">in</a>
+            <a href="https://youtube.com/@zornavikme" aria-label="YouTube" rel="noopener">▶</a>
+            <a href="https://twitter.com/zornavikme" aria-label="Twitter" rel="noopener">𝕏</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/author/">About / Author</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
+            <li><a href="/terms/">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year"></span> zornavik.me — All rights reserved.</p>
+        <p>
+          <a href="/privacy-policy/">Privacy</a> ·
+          <a href="/disclaimer/">Disclaimer</a> ·
+          <a href="/terms/">Terms</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    // Footer year
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+    // Hide loading indicator once posts container has content
+    const observer = new MutationObserver(() => {
+      const ind = document.getElementById("loading-indicator");
+      if (ind) ind.style.display = "none";
+    });
+    const pc = document.getElementById("posts-container");
+    if (pc) observer.observe(pc, { childList: true });
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Vacuum Reviews — Zornavik</title>
+  <meta name="description" content="Browse all 'Best' vacuum cleaner picks and guides on Zornavik.me.">
+  <link rel="canonical" href="https://zornavik.me/best/">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page-category" data-category="best">
+  <header id="site-header">
+    <div class="container header-inner">
+      <a href="/" class="site-logo"><div class="logo-icon">Z</div><span class="logo-text">zornavik<span>.me</span></span></a>
+      <nav class="main-nav"><a href="/">Home</a></nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav"><a href="/">Home</a></nav>
+
+  <main>
+    <section class="category-hero">
+      <div class="container">
+        <h1 id="category-title">Best <span>Vacuum Picks</span></h1>
+        <p><span id="category-count"></span></p>
+      </div>
+    </section>
+    <section class="posts-section">
+      <div class="container">
+        <div class="loading-state" id="loading-indicator"><div class="spinner"></div></div>
+        <div id="posts-container"></div>
+        <nav id="pagination"></nav>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">zornavik<span>.me</span></span>
+          <p>Honest vacuum cleaner reviews.</p>
+          <div class="social-icons">
+            <a href="https://facebook.com/zornavik.me" rel="noopener">f</a>
+            <a href="https://instagram.com/zornavik.me" rel="noopener">in</a>
+            <a href="https://youtube.com/@zornavikme" rel="noopener">▶</a>
+            <a href="https://twitter.com/zornavikme" rel="noopener">𝕏</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/author/">Author</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
+            <li><a href="/terms/">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>© <span id="footer-year"></span> zornavik.me</p></div>
+    </div>
+  </footer>
+  <script src="/js/main.js"></script>
+  <script>
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+    const observer = new MutationObserver(() => {
+      const ind = document.getElementById("loading-indicator");
+      if (ind) ind.style.display = "none";
+    });
+    const pc = document.getElementById("posts-container");
+    if (pc) observer.observe(pc, { childList: true });
+  </script>
+</body>
+</html>

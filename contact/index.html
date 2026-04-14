@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Zornavik</title>
+  <meta name="description" content="Get in touch with Liam Adrian Foster at Zornavik.me for questions, product suggestions, or vacuum cleaner advice.">
+  <link rel="canonical" href="https://zornavik.me/contact/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page-static">
+
+  <header id="site-header">
+    <div class="container header-inner">
+      <a href="/" class="site-logo">
+        <div class="logo-icon">Z</div>
+        <span class="logo-text">zornavik<span>.me</span></span>
+      </a>
+      <nav class="main-nav"><a href="/">Home</a></nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav"><a href="/">Home</a></nav>
+
+  <main class="static-page">
+    <div class="container">
+      <div class="page-hero">
+        <h1>Contact Us</h1>
+        <p class="page-meta">We're here to help — reach out anytime</p>
+      </div>
+
+      <div class="page-content">
+        <p>If you have any questions about vacuum cleaners, product suggestions, or anything related to content on zornavik.me, feel free to reach out. I always try to reply as soon as possible.</p>
+
+        <div class="contact-blocks">
+          <div class="contact-block">
+            <div class="icon">📧</div>
+            <h4>Email</h4>
+            <a href="mailto:support@zornavik.me">support@zornavik.me</a>
+            <p style="font-size:0.82rem;color:var(--color-text-muted);margin-top:4px;">Reply within 24–48 hours</p>
+          </div>
+          <div class="contact-block">
+            <div class="icon">💬</div>
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/15551234567">+1 (555) 123-4567</a>
+            <p style="font-size:0.82rem;color:var(--color-text-muted);margin-top:4px;">For quick questions</p>
+          </div>
+          <div class="contact-block">
+            <div class="icon">📱</div>
+            <h4>Social Media</h4>
+            <a href="https://facebook.com/zornavik.me" rel="noopener">Facebook</a> ·
+            <a href="https://instagram.com/zornavik.me" rel="noopener">Instagram</a>
+          </div>
+        </div>
+
+        <h2>Send a Message</h2>
+        <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+
+        <form class="contact-form" name="contact" netlify>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Vacuum recommendation question">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            Send Message
+            <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+              <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+            </svg>
+          </button>
+        </form>
+
+        <h2>Response Time</h2>
+        <p>I try to reply to all messages within 1–2 days. Sometimes it may take a little longer during busy periods. Before contacting, please check the blog — most common vacuum questions are already answered in detail.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">zornavik<span>.me</span></span>
+          <p>Honest, experience-backed vacuum cleaner reviews.</p>
+          <div class="social-icons">
+            <a href="https://facebook.com/zornavik.me" rel="noopener">f</a>
+            <a href="https://instagram.com/zornavik.me" rel="noopener">in</a>
+            <a href="https://youtube.com/@zornavikme" rel="noopener">▶</a>
+            <a href="https://twitter.com/zornavikme" rel="noopener">𝕏</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/author/">About / Author</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
+            <li><a href="/terms/">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year"></span> zornavik.me</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
